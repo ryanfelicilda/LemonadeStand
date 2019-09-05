@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Recipe
+    class Store
     {
         //member variable (have a)
         //constructor (spawner)

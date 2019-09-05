@@ -9,10 +9,10 @@ namespace LemonadeStand
     class Weather
     {
         Random random;
-        int tempHigh;
+        public int tempHigh;
 
-        static int maxTemp = 100;
-        static int minTemp = 32;
+        public int maxTemp = 100;
+        public int minTemp = 32;
 
         static List<string> conditions;
 
@@ -34,6 +34,12 @@ namespace LemonadeStand
             {
                 ConditionsList();
             }
+            DetermineWeather();
+        }
+
+        public void DetermineWeather()
+        {
+
         }
     }
 }

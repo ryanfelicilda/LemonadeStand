@@ -10,7 +10,9 @@ namespace LemonadeStand
     {
         public void RunGame()
         {
-
+            //member variable (have a)
+            //constructor (spawner)
+            //class method (do this)
         }
     }
 }

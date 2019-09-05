@@ -8,6 +8,8 @@ namespace LemonadeStand
 {
     class Customer
     {
-
+        //member variable (have a)
+        //constructor (spawner)
+        //class method (do this)
     }
 }
