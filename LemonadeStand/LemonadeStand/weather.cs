@@ -8,38 +8,32 @@ namespace LemonadeStand
 {
     class Weather
     {
-        Random random;
         public int tempHigh;
+        List<string> conditions;
 
-        public int maxTemp = 100;
-        public int minTemp = 32;
-
-        static List<string> conditions;
-
-        private void ConditionsList()
+        public Weather()
         {
+            conditions = new List<string>();
             conditions.Add("Clear Skies");
             conditions.Add("Partly Cloudy");
             conditions.Add("Mostly Cloudy");
             conditions.Add("Cloudy With Rainshowers");
             conditions.Add("Thunderstorm");
         }
-
-        public Weather(Random random)
+        public int SetTemp()
         {
-            this.random = random;
-            conditions = new List<string>();
-            tempHigh = random.Next(minTemp, maxTemp);
-            if(conditions.Count == 0)
-            {
-                ConditionsList();
-            }
-            DetermineWeather();
+            int maxTemp = 100;
+            int minTemp = 32;
+            Random rnd = new Random();
+            tempHigh = rnd.Next(minTemp, maxTemp);
+            return tempHigh;
         }
-
-        public void DetermineWeather()
+        public string SetCondition()
         {
-
+            Random rnd = new Random();
+            int i = rnd.Next(conditions.Count);
+            string wxCondition = conditions[i];
+            return wxCondition;
         }
     }
 }
