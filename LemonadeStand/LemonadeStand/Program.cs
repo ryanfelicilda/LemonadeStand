@@ -18,6 +18,9 @@ namespace LemonadeStand
             weather.SetTemp();
             weather.SetCondition();
 
+            Store store = new Store();
+            store.ChooseItem();
+            store.CupAmount();
 
         }
     }

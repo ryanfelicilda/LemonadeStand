@@ -8,6 +8,12 @@ namespace LemonadeStand
 {
     class Player
     {
+        public int money;
+        public Player()
+        {
+            inventory = new Inventory(0, 0, 0, 0);
+            money = 30;
+        }
         //member variable (have a)
         //constructor (spawner)
         //class method (do this)
