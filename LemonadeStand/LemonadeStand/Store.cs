@@ -9,9 +9,14 @@ namespace LemonadeStand
     class Store
     {
         public double cup;
+        public double cupCost;
         public double ice;
+        public double iceCost;
         public double sugar;
+        public double sugarCost;
         public double lemon;
+        public double lemonCost;
+        public double itemAmount;
 
         public Store()
         {
@@ -20,7 +25,7 @@ namespace LemonadeStand
             sugar = .25;
             lemon = .35;
         }
-        public string ChooseItem()
+        public string ChooseItem(Player player)
         {
 
             Console.WriteLine("What would you like to buy?\n" + "Cup, Ice, Sugar, or Lemon\n" + "Enter: Back to go back.\n");
@@ -28,21 +33,17 @@ namespace LemonadeStand
             switch (playerChoice)
             {
                 case "Cup":
-                    Console.WriteLine($"Balance: ${Player.money}");
+                    Console.WriteLine($"Balance: ${player.money}");
                     break;
                 case "Ice":
-                    Console.WriteLine($"Balance: ${Player.money}");
+                    Console.WriteLine($"Balance: ${player.money}");
                     break;
                 case "Sugar":
-                    Console.WriteLine($"Balance: ${Player.money}");
+                    Console.WriteLine($"Balance: ${player.money}");
                     break;
                 case "Lemon":
-                    Console.WriteLine($"Balance: ${Player.money}");
+                    Console.WriteLine($"Balance: ${player.money}");
                     break;
-                case "Back":
-                    UserInterface();
-                    break;
-
             }
             return playerChoice;
         }
@@ -50,34 +51,30 @@ namespace LemonadeStand
         public double CupAmount()
         {
             Console.WriteLine("How many cups would you like to buy?");
-            int itemAmount = int.Parse(Console.ReadLine());
-            double totalCost = cup * itemAmount;
-            return totalCost;
-            
+            itemAmount = int.Parse(Console.ReadLine());
+            double cupCost = cup * itemAmount;
+            return cupCost;
         }
         public double IceAmount()
         {
             Console.WriteLine("How many ice would you like to buy?");
-            int itemAmount = int.Parse(Console.ReadLine());
-            double totalCost = ice * itemAmount;
-            return totalCost;
-
+            itemAmount = int.Parse(Console.ReadLine());
+            double iceCost = ice * itemAmount;
+            return iceCost;
         }
         public double SugarAmount()
         {
             Console.WriteLine("How many sugar would you like to buy?");
-            int itemAmount = int.Parse(Console.ReadLine());
-            double totalCost = sugar * itemAmount;
-            return totalCost;
-
+            itemAmount = int.Parse(Console.ReadLine());
+            double sugarCost = sugar * itemAmount;
+            return sugarCost;
         }
         public double LemonAmount()
         {
             Console.WriteLine("How many lemons would you like to buy?");
-            int itemAmount = int.Parse(Console.ReadLine());
-            double totalCost = lemon * itemAmount;
-            return totalCost;
-
+            itemAmount = int.Parse(Console.ReadLine());
+            double lemonCost = lemon * itemAmount;
+            return lemonCost;
         }
     }
 }

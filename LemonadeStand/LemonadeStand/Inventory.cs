@@ -8,8 +8,18 @@ namespace LemonadeStand
 {
     class Inventory
     {
-        //member variable (have a)
-        //constructor (spawner)
-        //class method (do this)
+        public int cup;
+        public int ice;
+        public int sugar;
+        public int lemon;
+        public int salesProfit;
+        public Inventory()
+        {
+            cup = 0;
+            ice = 0;
+            sugar = 0;
+            lemon = 0;
+            salesProfit = 0;
+        }
     }
 }

@@ -8,6 +8,9 @@ namespace LemonadeStand
 {
     class Game
     {
+        public Player player;
+        public Store store;
+
         public void RunGame()
         {
             Console.WriteLine("INSTRUCTIONS\n\n" +

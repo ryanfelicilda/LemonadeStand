@@ -17,10 +17,12 @@ namespace LemonadeStand
             Weather weather = new Weather();
             weather.SetTemp();
             weather.SetCondition();
-
+            
             Store store = new Store();
-            store.ChooseItem();
-            store.CupAmount();
+            store.ChooseItem(game.player);
+
+            Player player = new Player();
+            player.MoneyBalance(store, player);
 
         }
     }
