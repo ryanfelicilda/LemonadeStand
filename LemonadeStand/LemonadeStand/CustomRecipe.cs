@@ -11,7 +11,7 @@ namespace LemonadeStand
         private double lemonAmount;
         private double sugarAmount;
         private double iceAmount;
-        public override double xxxxx => lemonAmount * 0.4 + sugarAmount * 0.2 + iceAmount * 0.1;
+        public override double setting => lemonAmount * 0.3 + sugarAmount * 0.2 + iceAmount * 0.2; //More lemons means better chance to sell.
         public CustomRecipe(double lemonCount, double sugarCount, double iceCount) : base(1)
         {
             lemonAmount = lemonCount;
