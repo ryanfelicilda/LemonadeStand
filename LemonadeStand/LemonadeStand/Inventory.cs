@@ -8,18 +8,14 @@ namespace LemonadeStand
 {
     class Inventory
     {
-        public int cup;
-        public int ice;
-        public int sugar;
-        public int lemon;
-        public int salesProfit;
-        public Inventory()
+        private static double money = 30;
+        public static double Balance
         {
-            cup = 0;
-            ice = 0;
-            sugar = 0;
-            lemon = 0;
-            salesProfit = 0;
+            get => Math.Round(money, 2);
+            private set
+            {
+                money = value;
+            }
         }
     }
 }
