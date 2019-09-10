@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class RunDay
+    class RunDay : IDay
     {
         private double dayLoss = 0;
         public void CheckWeather(Weather weather)
         {
-            Console.WriteLine("Let's sell some lemonade!");
+            Console.WriteLine("Welcome to Ryan's Lemonade Stand. Let's sell some lemonade!");
             Console.WriteLine($"Today is {weather.Type} with a temperature of {weather.Temperature}F");
             Console.WriteLine("Let's go to the store and buy some ingredients.");
         }
@@ -146,6 +146,37 @@ namespace LemonadeStand
                         }
                 }
             }
+        }
+        public void SellProduct(BasicRecipe product, Weather weather)
+        {
+            Console.WriteLine($"Today will be {weather.Type} with a temperature of {weather.Temperature}F");
+            Console.WriteLine("How much would you like to sell your lemonade for today?");
+            double price = Validation.ReadDoubleLine();
+
+            Console.Clear();
+            Console.WriteLine("Selling lemonade...");
+            Console.ReadLine();
+            Console.Clear();
+
+            double dayProfit = 0;
+            for (int i = 0; i < CustomerCountLogic.CustomerLogic(weather); i++)
+            {
+                Customer customer = new Customer();
+                if (customer.GonnaBuy(price))
+                {
+                    dayProfit += price + product.setting;
+                    Inventory.AddToBalance(price + product.setting);
+                }
+            }
+
+            Console.Clear();
+            Console.WriteLine($"Today, you spent ${Math.Round(dayLoss, 2)} at the store for ingredients, " +
+                $"and made ${Math.Round(dayProfit, 2)}. Profit/Loss for today: ${Math.Round(dayProfit + dayLoss, 2)}");
+            Console.WriteLine("What a long day. Take a break and try again tomorrow. Press Enter to get some sleep.");
+            Console.ReadLine();
+            Console.WriteLine("Nap time...");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }

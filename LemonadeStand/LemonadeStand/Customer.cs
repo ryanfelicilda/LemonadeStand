@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Program
+    class Customer
     {
-        static void Main(string[] args)
+        public static double MaxPrice => 5;
+        public bool GonnaBuy(double price)
         {
-            var game = new RunGame();
-            Console.ReadLine();
+            return new Random().Next(1, 100) / 100d > price / MaxPrice;
         }
     }
 }

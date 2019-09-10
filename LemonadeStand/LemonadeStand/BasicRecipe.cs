@@ -8,9 +8,9 @@ namespace LemonadeStand
 {
     class BasicRecipe
     {
-        public static double LemonCount { get; } = .5;
-        public static double SugarCount { get; } = .5;
-        public static double IceCount { get; } = .5;
+        public static double LemonCount { get; } = .8;
+        public static double SugarCount { get; } = .8;
+        public static double IceCount { get; } = .7;
         private double total;
         public virtual double setting => total * 0.1;
         public BasicRecipe(double amount)
